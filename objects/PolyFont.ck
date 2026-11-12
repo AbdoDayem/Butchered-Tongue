@@ -26,7 +26,7 @@ public class PolyFont extends GGen
     // lang : language selector
     //          0   :   English
     //          1   :   'A' Language
-    //          2   :   'B' Language 
+    //          2   :   'O' Language 
     fun void text(string tex, int lang)
     {
         // Remove Current Text
@@ -45,7 +45,7 @@ public class PolyFont extends GGen
                 GText char;
                 if (!lang) char.text(tex.substring(i, 1));
                 else if (lang == 1) char.text("a");
-                else if (lang == 2) char.text("b");
+                else if (lang == 2) char.text("o");
                 char.font(fonts[c - 97]);
                 char.posX((i % wrap) * space);
                 char.posY(-(i / wrap) $ int);
@@ -58,8 +58,18 @@ public class PolyFont extends GGen
                 GText char;
                 if (!lang) char.text(tex.substring(i, 1));
                 else if (lang == 1) char.text("A");
-                else if (lang == 2) char.text("B");
+                else if (lang == 2) char.text("O");
                 char.font(fonts[c - 65]);
+                char.posX((i % wrap) * space);
+                char.posY(-(i / wrap) $ int);
+                char --> this;
+                chars << char;
+            }
+            // Other Chars
+            else
+            {
+                GText char;
+                char.text(tex.substring(i, 1));
                 char.posX((i % wrap) * space);
                 char.posY(-(i / wrap) $ int);
                 char --> this;
@@ -67,5 +77,4 @@ public class PolyFont extends GGen
             }
         }
     }
-
 }
