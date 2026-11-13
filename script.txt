@@ -1,0 +1,131 @@
+Act 1: First Exposure
+______________________________________________________________________________________
+// ------------------------------------------------------------------- //
+Scene 1:
+Man Sitting by the tree speaking in a mix of language A and O, He's remembering something.
+
+State 1:
+Tree is decayed, coloring is faded
+
+Task 1:
+Press key to zoom in repeatedly on the Man to enter the memory
+
+// ------------------------------------------------------------------- //
+Scene 2:
+Boy is running around the tree, shouting in language A.
+After he is tired, a mysterious text bubble calls him in language A.
+
+State 2: 
+Tree is lively, color/lighting is bright and vibrant
+
+Task 2: 
+Use arrow keys to make the boy run till he is tired.
+
+// ------------------------------------------------------------------- //
+Scene 3:
+Boy and woman are sitting by the tree, talking in language A
+
+State 3:
+Tree is lively, color/lighting is bright and vibrant.
+
+Task 3:
+Space to make conversation move forward
+
+// ------------------------------------------------------------------- //
+Scene 4:
+Plane is flying the background
+
+State 4:
+Tree is lively, color/lighting is bright and vibrant.
+Tree color twitches a little (or maybe camera)
+
+Task 4:
+Use arrow keys to move plane from one end of the map from the other
+
+// ------------------------------------------------------------------- //
+Scene 5:
+Boy and woman are sitting by the tree, talking in language A
+Unknown man comes, talks in language O sometimes, language A sometimes
+
+State 5:
+Tree is lively, color/lighting is bright and vibrant.
+Tree color twitches a little (or maybe camera)
+
+Task 5:
+Click on the unknown words in language O that the man says
+
+// ------------------------------------------------------------------- //
+Scene 6:
+Boy is by the tree on his own. He is translating words from language A to language O
+
+State 6:
+Edges of tree branch darken in color
+
+Task 6:
+Pick the correct translation from language A to language O
+
+// ------------------------------------------------------------------- //
+Scene 7:
+Time Skip
+
+State 7:
+Edges of tree branch darken in color
+
+Task 7:
+Use arrow key to transition time really quickly
+
+// ------------------------------------------------------------------- //
+
+Act 2: Two-Tongued
+______________________________________________________________________________________
+// ------------------------------------------------------------------- //
+Scene 8:
+Woman and Grown Boy are by the tree talking
+
+State 8:
+Edges of tree branch darken in color
+
+Task 8:
+Select wether the boy uses word in language A or language O
+(The more you chose language O, the harder it will be to pick language A in the future)
+
+// ------------------------------------------------------------------- //
+Scene 9:
+Grown Boy talking with Unknown Man in language O
+
+State 9:
+Edges of tree branch darken in color
+
+Task 9:
+Space to move the conversation forwards
+
+// ------------------------------------------------------------------- //
+Scene 10:
+Grown Boy and Girl are talking by the tree. 
+Grown Boy responds in language O sometimes.
+Girl responds in question mark.
+
+State 10:
+Edges of tree branch darken in color
+
+Task 10:
+Space to move the conversation forwards
+
+// ------------------------------------------------------------------- //
+Scene 10:
+Grown Boy and Girl are talking by the tree. 
+Grown Boy responds in language O sometimes.
+Girl responds in question mark.
+
+State 10:
+Edges of tree branch darken in color
+
+Task 10:
+Space to move the conversation forwards
+
+
+
+
+
+
+
