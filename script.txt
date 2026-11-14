@@ -75,7 +75,6 @@ Task 7:
 Use arrow key to transition time really quickly
 
 // ------------------------------------------------------------------- //
-
 Act 2: Two-Tongued
 ______________________________________________________________________________________
 // ------------------------------------------------------------------- //
@@ -112,18 +111,14 @@ Task 10:
 Space to move the conversation forwards
 
 // ------------------------------------------------------------------- //
-Scene 10:
-Grown Boy and Girl are talking by the tree. 
-Grown Boy responds in language O sometimes.
-Girl responds in question mark.
+Act 3: Butchered Tongue
+______________________________________________________________________________________
+// ------------------------------------------------------------------- //
+Scene XX:
 
-State 10:
-Edges of tree branch darken in color
+State XX:
 
-Task 10:
-Space to move the conversation forwards
-
-
+Task XX:
 
 
 
