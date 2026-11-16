@@ -8,19 +8,23 @@
 @import "objects/Character.ck"
 // ------------------------------------------------------------------- //
 // Scene 1
+class Scene1 extends Scene
+{
+    Character man(); man --> this;
+    man.mat.color(@(0,0,0));
+    man.pos(@(-1,0,0));
 
-
-
-
-
-
-
-
-
-
+    fun void update()
+    {
+        if (GWindow.keyDown(GWindow.KEY_SPACE)) 1 => finished;
+    }
+}
 // ------------------------------------------------------------------- //
 // Scene 2
+class Scene2 extends Scene
+{
 
+}
 // ------------------------------------------------------------------- //
 // Window Setup
 GG.camera().orthographic();
@@ -33,6 +37,12 @@ Scene @ scenes[0];
 
 TitleScene act1("ACT I: First Exposure");
 scenes << act1;
+
+Scene1 scene1;
+scenes << scene1;
+
+Scene2 scene2;
+//scenes << scene2;
 
 TitleScene act2("ACT II: Two Tongued");
 scenes << act2;
@@ -49,21 +59,19 @@ scenes << credits;
 0 => int counter;
 
 scenes[counter].enter();
-scenes[counter] --> GG.scene();
 
 while(true)
 {
     GG.nextFrame() => now;
+    Tween.update();
 
     scenes[counter].update();
 
     if(scenes[counter].finished)
     {
         scenes[counter].exit();
-        scenes[counter] --< GG.scene();
-        counter + 1 => counter;
+        counter++;
         if(counter == scenes.size()) me.exit();
-        scenes[counter].enter();
-        scenes[counter] --> GG.scene();
+        else scenes[counter].enter();
     }
 }

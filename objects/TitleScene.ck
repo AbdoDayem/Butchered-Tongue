@@ -15,13 +15,8 @@ public class TitleScene extends Scene
 
     fun void enter() 
     { 
-        0 => finished; 
+        super.enter();
         0 => pressed;
-    }
-
-    fun void exit() 
-    {
-
     }
 
     // Finish scene on space pressed and released
