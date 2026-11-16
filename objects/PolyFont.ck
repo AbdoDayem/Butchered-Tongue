@@ -27,25 +27,33 @@ public class PolyFont extends GGen
     //          0   :   English
     //          1   :   'A' Language
     //          2   :   'O' Language 
+    //          3   :   Mixed Language
     fun void text(string tex, int lang)
     {
         // Remove Current Text
         for (0 => int i; i < chars.size(); i++) chars[i] --< this;
         chars.clear();
 
+        0 => int word;
+
         for (0 => int i; i < tex.length(); i++)
         {
             // ASCII Shenanigans
             tex.charAt(i) => int c;
+
+            // NOTE: space = 32
+            if (c == 32) word++;
+            lang => int l;
+            if (lang == 3) 1 + (word % 2) => l;
 
             // NOTE: a = 97, z = 122, A = 65, Z = 90
             // Lower Case
             if (c >= 97 && c <= 122)
             {
                 GText char;
-                if (!lang) char.text(tex.substring(i, 1));
-                else if (lang == 1) char.text("a");
-                else if (lang == 2) char.text("o");
+                if (!l) char.text(tex.substring(i, 1));
+                else if (l == 1) char.text("a");
+                else if (l == 2) char.text("o");
                 char.font(fonts[c - 97]);
                 char.posX((i % wrap) * space);
                 char.posY(-(i / wrap) $ int);
@@ -56,9 +64,9 @@ public class PolyFont extends GGen
             else if (c >= 65 && c <= 90)
             {
                 GText char;
-                if (!lang) char.text(tex.substring(i, 1));
-                else if (lang == 1) char.text("A");
-                else if (lang == 2) char.text("O");
+                if (!l) char.text(tex.substring(i, 1));
+                else if (l == 1) char.text("A");
+                else if (l == 2) char.text("O");
                 char.font(fonts[c - 65]);
                 char.posX((i % wrap) * space);
                 char.posY(-(i / wrap) $ int);
@@ -76,5 +84,11 @@ public class PolyFont extends GGen
                 chars << char;
             }
         }
+    }
+
+    // Overwritten color function
+    fun void color(vec3 color)
+    {
+        for (GText ch : chars) ch.color(color);
     }
 }

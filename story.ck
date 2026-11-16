@@ -10,13 +10,46 @@
 // Scene 1
 class Scene1 extends Scene
 {
-    Character man(); man --> this;
-    man.mat.color(@(0,0,0));
-    man.pos(@(-1,0,0));
+    // So I can zoom
+    GGen world --> this;
 
+    // Man
+    Character man(); 
+    man --> world;
+    man.mat.color(@(0, 0, 0));
+    man.plane.sca(@(0.5, 1, 1));
+
+    // Tree
+    Character trunk(); 
+    trunk --> world;
+    trunk.mat.color(@(0.55, 0.5, 0.45));
+    trunk.plane.sca(@(0.4, 2, 1));
+    trunk.pos(@(2, 0.5, 0));
+
+    Character leaves(); leaves --> world;
+    leaves.mat.color(@(0.65, 0.7, 0.6));
+    leaves.plane.sca(@(1.6, 1.6, 1));
+    leaves.pos(@(2, 2, 0));
+
+    // Zooming
+    1.0 => float zoom;
+    0 => int presses;
+
+    // Task: Press key to zoom in repeatedly on the Man to enter the memory
     fun void update()
     {
-        if (GWindow.keyDown(GWindow.KEY_SPACE)) 1 => finished;
+
+        if (GWindow.keyDown(GWindow.KEY_SPACE))
+        {
+            zoom * 1.2 => zoom;
+            Tween.scale(world, zoom, 1::second);
+            presses++;
+            
+            if (presses % 2) man.say("Blah agweaiofn asfno", 3);
+            else man.say("Yadda yoobaasdf blahblah", 2);
+
+            if (presses == 5) 1 => finished;
+        }
     }
 }
 // ------------------------------------------------------------------- //
@@ -50,7 +83,7 @@ scenes << act2;
 TitleScene act3("ACT III: Butchered Tongue");
 scenes << act3;
 
-TitleScene credits("Thank you!");
+TitleScene credits("Credits");
 scenes << credits;
 
 
