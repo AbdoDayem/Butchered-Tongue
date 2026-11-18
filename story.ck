@@ -95,7 +95,7 @@ class Scene2 extends Scene
     // Progress Bar Stuff
     4.0 => float barW;
     FlatMaterial fullMat; 
-    backMat.color(@(0.8, 0.8, 0.8));
+    fullMat.color(@(0.8, 0.8, 0.8));
     FlatMaterial fillMat; 
     fillMat.color(@(0.9, 0.1, 0.1));
 
