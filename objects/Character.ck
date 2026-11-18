@@ -11,14 +11,12 @@ public class Character extends GGen
 
     // Letter sounds
     LPF lpf;
-    4000 => lpf.freq;
-    5 => lpf.Q;
-    SndBuf aSound => lpf => dac;
-    SndBuf oSound => lpf => dac;
-    "audio/ma1.wav" => aSound.read;
-    "audio/mo1.wav" => oSound.read;
-    aSound.samples() => aSound.pos;
-    oSound.samples() => oSound.pos;
+    Gain gain;
+    10000 => lpf.freq;
+    20 => lpf.Q;
+    0.2 => gain.gain;
+    SndBuf aSound => lpf => gain => dac;
+    SndBuf oSound => lpf => gain => dac;
 
     class Blip extends Chommand
     {
@@ -32,6 +30,14 @@ public class Character extends GGen
             Math.random2f(0.9, 1.1) => snd.rate;
             0 => snd.pos;
         }
+    }
+
+    fun setSound(string asnd, string osnd)
+    {
+        asnd => aSound.read;
+        osnd => oSound.read;
+        aSound.samples() => aSound.pos;
+        oSound.samples() => oSound.pos;
     }
 
     // For my Drawings
